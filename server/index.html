@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Host your GitHub App on Glitch 🤖🎏✨</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style media="screen">
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font: 1em/1.5 Helvetica, Arial, sans-serif;
+        color: #111;
+      }
+      body {
+        max-width: 1200px;
+        margin: 3em auto;
+      }
+      h2 {
+        margin: 4em 0 0;
+        font-size: 1em;
+        font-weight: normal;
+      }
+      h2 strong {
+        font-size: 1.5em;
+        display: block;
+      }
+      input {
+        display: block;
+        width: 100%;
+        padding: .4em .6em .5em;
+      }
+      button {
+        font-size: 1.5em;
+        background: #222;
+        color: #eee;
+        padding: .4em .6em .5em;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Host your GitHub App on Glitch 🤖🎏✨
+      </h1>
+    </header>
+
+    <main>
+      <form method='post' enctype="multipart/form-data">
+        <h2>
+          Step 1:
+          <strong>Enter the repository of the app you would like to deploy</strong>
+        </h2>
+        <p>
+          <strong>ProTip&trade;</strong>: Find some great examples <a href="https://probot.github.io/apps/">Probot’s featured apps</a>.
+        </p>
+        <p>
+          <label for="input-repository">Repository URL</label>
+          <input type="url" name="repository" id="input-repository" placeholder="e.g. https://github.com/hoodiehq/first-timers-bot" required>
+          <!--
+            TODO: Make this a live search against all listed Probot apps on https://probot.github.io \o/
+          -->
+        </p>
+        <h2>
+          Step 2:
+          <strong>Create a new App on GitHub</strong>
+        </h2>
+        <p>
+          Creating a GitHub App is free. You can create it at  <a href="https://github.com/settings/apps/new">https://github.com/settings/apps/new</a>
+        </p>
+        <p>
+          Enter a name GitHub App name, Homepage URL, Webhook URL and Webhook Secret.
+          For Homepage and Webhook URL, enter <strong>https://<span id="var-glitch-subdomain"></span>.glitch.me</strong>.
+          Set the permissions based on what the app needs. Enter the Webhook Secret you entered below
+          <!--
+            TODO: I wish we could tell what to select here based on the Probot App selected on top.
+            Maybe we can ask to enter the required scopes as part of the submissions?
+          -->
+        </p>
+        <p>
+          <label for="input-secret">Webhook Secret</label>
+          <input type="text" name="secret" id="input-secret" placeholder="e.g. secret" required>
+        </p>
+        <h2>
+          Step 3:
+          <strong>Generate private key</strong>
+        </h2>
+        <p>
+          After you created the GitHub App, enter the app ID below. It is shown
+          on the top right of the General form, below &quot;Owned by @yourusername&quot;.
+        </p>
+        <p>
+          <label for="input-id">ID</label>
+          <input type="number" name="id" id="input-id" placeholder="e.g. 1234" required>
+        </p>
+        <p>
+          Next, press the <strong>Generate private key</strong> button. It will download a *.private-key.pem file.
+          Select that file below
+        </p>
+        <p>
+          <label for="input-private-key">Private key</label>
+          <input type="file" name="privateKey" id="input-private-key" required>
+        </p>
+        <h2>
+          <strong>You are all set!</strong>
+        </h2>
+        <p>
+          <button type="submit">Create app on Glitch</button>
+        </p>
+      </form>
+    </main>
+
+    <script>
+      const $varSubdomain = document.querySelector('#var-glitch-subdomain')
+      $varSubdomain.textContent = location.hostname.replace('.glitch.me', '')
+    </script>
+  </body>
+</html>
