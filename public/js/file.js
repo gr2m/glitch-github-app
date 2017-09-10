@@ -6,11 +6,11 @@
 //   </label>
 //   <strong>No file selected</strong>
 //
-document.querySelectorAll('.manual-file-chooser').forEach(function(input) {
-  var label = input.parentElement.nextElementSibling;
+document.querySelectorAll('.manual-file-chooser').forEach(function (input) {
+  var label = input.parentElement.nextElementSibling
 
-	input.addEventListener('change', function(e) {
-		var fileName = e.target.value.split( '\\' ).pop();
-		label.innerHTML = fileName;
-	});
-});
+  input.addEventListener('change', function (e) {
+    var fileName = e.target.value.split('\\').pop()
+    label.innerHTML = fileName
+  })
+})
