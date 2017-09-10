@@ -55,22 +55,25 @@
               <strong>Step 2:</strong>
               Setup your app on GitHub
             </h2>
+
+            <div class="d-flex gutter">
+              <div class="col-8">
+                Enter a name GitHub App name, Homepage URL, Webhook URL and Webhook Secret.
+                For Homepage and Webhook URL, enter <strong>https://<span id="var-glitch-subdomain"></span>.glitch.me</strong>.
+                Set the permissions based on what the app needs.
+                <!--
+                  TODO: I wish we could tell what to select here based on the Probot App selected on top.
+                  Maybe we can ask to enter the required scopes as part of the submissions?
+                -->
+              </div>
+              <div class="col-4 text-center">
+                <a class="btn btn-large" target="_blank" href="https://github.com/settings/apps/new">Setup App on GitHub</a>
+              </div>
+            </div>
             <p>
-              Creating a GitHub App is free. You can create it at
             </p>
 
-            <div class="my-4 text-center">
-              <a class="btn btn-large" target="_blank" href="https://github.com/settings/apps/new">Setup App on GitHub</a>
-            </div>
-
             <p class="text-gray-light">
-              Enter a name GitHub App name, Homepage URL, Webhook URL and Webhook Secret.
-              For Homepage and Webhook URL, enter <strong>https://<span id="var-glitch-subdomain"></span>.glitch.me</strong>.
-              Set the permissions based on what the app needs.
-              <!--
-                TODO: I wish we could tell what to select here based on the Probot App selected on top.
-                Maybe we can ask to enter the required scopes as part of the submissions?
-              -->
             </p>
           </div>
 
@@ -80,8 +83,7 @@
               Setup your app on Glitch
             </h2>
             <p>
-              After setting up the GitHub App, enter the app ID below. It is shown
-              on the top right of the General form, below &quot;Owned by @yourusername&quot;.
+              After setting up the GitHub App, enter the <strong>Webhook Secret</strong> and <strong>App ID</strong>, and upload your <strong>Private Key</strong>.
             </p>
 
             <div class="d-flex gutter">
@@ -107,7 +109,6 @@
               <div class="col-8">
                 <dl class="form-group mt-0">
                   <dt><label for="input-private-key">Private Key</label></dt>
-                  <dd>Press the <strong>Generate private key</strong> button. It will download a *.private-key.pem file.</dd>
                   <dd>
                     <label class="btn position-relative">
                       Upload private key
