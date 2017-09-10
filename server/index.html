@@ -5,114 +5,121 @@
     <title>Host your GitHub App on Glitch 🤖🎏✨</title>
     <meta name="description" content="A cool thing made with Glitch">
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/primer.css">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <style media="screen">
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        font: 1em/1.5 Helvetica, Arial, sans-serif;
-        color: #111;
-      }
-      body {
-        max-width: 1200px;
-        margin: 3em auto;
-      }
-      h2 {
-        margin: 4em 0 0;
-        font-size: 1em;
-        font-weight: normal;
-      }
-      h2 strong {
-        font-size: 1.5em;
-        display: block;
-      }
-      input {
-        display: block;
-        width: 100%;
-        padding: .4em .6em .5em;
-      }
-      button {
-        font-size: 1.5em;
-        background: #222;
-        color: #eee;
-        padding: .4em .6em .5em;
-        border: 0;
-      }
-    </style>
   </head>
-  <body>
-    <header>
-      <h1>
-        Host your GitHub App on Glitch 🤖🎏✨
-      </h1>
-    </header>
+  <body class="bg-gray">
+    <div class="container-md px-3 py-6">
+      <header class="text-center my-6">
+        <h1 class="alt-h1">
+          🤖 🎏 ✨
+        </h1>
 
-    <main>
-      <form method='post' enctype="multipart/form-data">
-        <h2>
-          Step 1:
-          <strong>Enter the repository of the app you would like to deploy</strong>
-        </h2>
-        <p>
-          <strong>ProTip&trade;</strong>: Find some great examples <a href="https://probot.github.io/apps/">Probot’s featured apps</a>.
+        <p class="alt-lead">
+          Deploy
+          <a class="text-inherit no-underline" href="https://developer.github.com/apps">
+            <svg style="height: 1.05em" class="octicon octicon-logo-github v-align-text-top" viewBox="0 0 45 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 0 0-.146-.18zm23.696-2.2c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61H33.84c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"></path></svg> Apps
+          </a>
+          to
+          <a class="text-bold no-underline" href="https://glitch.com">Glitch</a>
         </p>
-        <p>
-          <label for="input-repository">Repository URL</label>
-          <input type="url" name="repository" id="input-repository" placeholder="e.g. https://github.com/hoodiehq/first-timers-bot" required>
-          <!--
-            TODO: Make this a live search against all listed Probot apps on https://probot.github.io \o/
-          -->
-        </p>
-        <h2>
-          Step 2:
-          <strong>Create a new App on GitHub</strong>
-        </h2>
-        <p>
-          Creating a GitHub App is free. You can create it at  <a href="https://github.com/settings/apps/new">https://github.com/settings/apps/new</a>
-        </p>
-        <p>
-          Enter a name GitHub App name, Homepage URL, Webhook URL and Webhook Secret.
-          For Homepage and Webhook URL, enter <strong>https://<span id="var-glitch-subdomain"></span>.glitch.me</strong>.
-          Set the permissions based on what the app needs. Enter the Webhook Secret you entered below
-          <!--
-            TODO: I wish we could tell what to select here based on the Probot App selected on top.
-            Maybe we can ask to enter the required scopes as part of the submissions?
-          -->
-        </p>
-        <p>
-          <label for="input-secret">Webhook Secret</label>
-          <input type="text" name="secret" id="input-secret" placeholder="e.g. secret" required>
-        </p>
-        <h2>
-          Step 3:
-          <strong>Generate private key</strong>
-        </h2>
-        <p>
-          After you created the GitHub App, enter the app ID below. It is shown
-          on the top right of the General form, below &quot;Owned by @yourusername&quot;.
-        </p>
-        <p>
-          <label for="input-id">ID</label>
-          <input type="number" name="id" id="input-id" placeholder="e.g. 1234" required>
-        </p>
-        <p>
-          Next, press the <strong>Generate private key</strong> button. It will download a *.private-key.pem file.
-          Select that file below
-        </p>
-        <p>
-          <label for="input-private-key">Private key</label>
-          <input type="file" name="privateKey" id="input-private-key" required>
-        </p>
-        <h2>
-          <strong>You are all set!</strong>
-        </h2>
-        <p>
-          <button type="submit">Create app on Glitch</button>
-        </p>
-      </form>
-    </main>
+      </header>
+
+      <main>
+        <form class="mt-6" method='post' enctype="multipart/form-data">
+          <div class="my-6 p-6 card">
+            <h2 class="alt-h3 mb-4">
+              <strong>Step 1:</strong>
+              Which app you would like to deploy?
+            </h2>
+            <p>
+              <dl class="form-group">
+                <dt><label for="input-repository">Repository</label></dt>
+                <dd><input class="form-control" type="url" name="repository" id="input-repository" placeholder="e.g. https://github.com/hoodiehq/first-timers-bot" required></dd>
+              </dl>
+              <!--
+                TODO: Make this a live search against all listed Probot apps on https://probot.github.io \o/
+              -->
+            </p>
+            <p class="text-gray-light">
+              <strong>ProTip&trade;</strong>: Find some great examples <a href="https://probot.github.io/apps/">Probot’s featured apps</a>.
+            </p>
+          </div>
+
+          <div class="my-6 p-6 card">
+            <h2 class="alt-h3 mb-4">
+              <strong>Step 2:</strong>
+              Setup your app on GitHub
+            </h2>
+            <p>
+              Creating a GitHub App is free. You can create it at
+            </p>
+
+            <div class="my-4 text-center">
+              <a class="btn btn-large" target="_blank" href="https://github.com/settings/apps/new">Setup App on GitHub</a>
+            </div>
+
+            <p class="text-gray-light">
+              Enter a name GitHub App name, Homepage URL, Webhook URL and Webhook Secret.
+              For Homepage and Webhook URL, enter <strong>https://<span id="var-glitch-subdomain"></span>.glitch.me</strong>.
+              Set the permissions based on what the app needs.
+              <!--
+                TODO: I wish we could tell what to select here based on the Probot App selected on top.
+                Maybe we can ask to enter the required scopes as part of the submissions?
+              -->
+            </p>
+          </div>
+
+          <div class="my-6 p-6 card">
+            <h2 class="alt-h3">
+              <strong>Step 3:</strong>
+              Setup your app on Glitch
+            </h2>
+            <p>
+              After you created the GitHub App, enter the app ID below. It is shown
+              on the top right of the General form, below &quot;Owned by @yourusername&quot;.
+            </p>
+
+            <div class="d-flex gutter">
+              <dl class="col-8 form-group">
+                <dt><label for="input-secret">Webhook Secret</label></dt>
+                <dd><input class="form-control" type="text" name="secret" id="input-secret" placeholder="e.g. secret" required></dd>
+                <dd class="text-gray-light">Enter the secret you entered when setting up the GitHub App</dd>
+              </dl>
+              <div class="col-4">
+                <img src="/img/github-app-secret.png" class="width-fit border" alt="">
+              </div>
+            </div>
+            <div class="d-flex gutter">
+              <dl class="col-8 form-group mt-0">
+                <dt><label for="input-id">GitHub App ID</label></dt>
+                <dd><input class="form-control" type="number" name="id" id="input-id" placeholder="e.g. 1234" required></dd>
+              </dl>
+              <div class="col-4">
+                <img src="/img/github-app-id.png" class="width-fit border" alt="">
+              </div>
+            </div>
+            <div class="d-flex gutter">
+              <div class="col-8">
+                <dl class="form-group mt-0">
+                  <dt><label for="input-private-key">Private key</label></dt>
+                  <dd>Press the <strong>Generate private key</strong> button. It will download a *.private-key.pem file.</dd>
+                  <dd><input type="file" name="privateKey" id="input-private-key" required></dd>
+                </p>
+              </div>
+              <div class="col-4">
+                <img src="/img/github-app-private-key.png" class="width-fit border" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-large btn-primary" type="submit">Deploy app to Glitch</button>
+          </div>
+        </form>
+      </main>
+    </div>
 
     <script>
       const $varSubdomain = document.querySelector('#var-glitch-subdomain')
