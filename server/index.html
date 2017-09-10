@@ -103,9 +103,17 @@
             <div class="d-flex gutter">
               <div class="col-8">
                 <dl class="form-group mt-0">
-                  <dt><label for="input-private-key">Private key</label></dt>
+                  <dt><label for="input-private-key">Private Key</label></dt>
                   <dd>Press the <strong>Generate private key</strong> button. It will download a *.private-key.pem file.</dd>
-                  <dd><input type="file" name="privateKey" id="input-private-key" required></dd>
+                  <dd>
+                    <label class="btn position-relative">
+                      Upload private key
+                      <input type="file" class="manual-file-chooser" name="privateKey" id="input-private-key" required>
+                    </label>
+                    <strong>No file selected</strong>
+                    <script type="text/javascript" src="/js/file.js">
+                    </script>
+                  </dd>
                 </p>
               </div>
               <div class="col-4">
