@@ -17,6 +17,7 @@ branches:
 
 deploy:
   provider: script
+  skip_cleanup: true
   script: DEBUG=glitch-deploy* npx glitch-deploy
   on:
     branch: master
