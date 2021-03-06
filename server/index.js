@@ -30,9 +30,8 @@ const upload = multer({ storage })
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'))
 
-const htmlToServe = process.env.PROJECT_DOMAIN === 'probot' ? 'redirect-to-remix.html' : 'index.html'
 app.get('/', function (request, response) {
-  response.sendFile(resolve(__dirname, htmlToServe))
+  process.env.PROJECT_DOMAIN === 'probot' ? response.redirect('https://glitch.com/edit/#!/remix/probot') : response.sendFile(resolve(__dirname, 'index.html'))
 })
 
 app.post('/', upload.single('privateKey'), function (req, res) {
